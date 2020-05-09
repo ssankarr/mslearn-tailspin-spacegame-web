@@ -73,13 +73,6 @@ steps:
 - task: DotNetCoreCLI@2
   displayName: 'Publish the project - $(buildConfiguration)'
   inputs:
-- task: AzureRmWebAppDeployment@4
-  inputs:
-    ConnectionType: 'AzureRM'
-    azureSubscription: 'Visual Studio Enterprise – MPN(a86dd196-6829-4787-a2a4-921ad225efd2)'
-    appType: 'webApp'
-    WebAppName: 
-    packageForLinux: '$(System.DefaultWorkingDirectory)/**/*.zip'
     command: 'publish'
     projects: '**/*.csproj'
     publishWebProjects: false
